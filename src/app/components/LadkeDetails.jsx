@@ -9,7 +9,7 @@ import Venues from "../components/Venues";
 
 export default function LadkeDetails (){
     return (
-        <div className="mx-auto w-full max-w-4xl p-6 text-center md:p-2">
+        <div className="mx-auto w-full max-w-4xl md:p-6 text-center md:p-2">
 
       <p className="text-[17px] md:text-2xl text-[#B35800] font-cormorant-garamond">
         With the blessings of Smt. Vimla Devi Tawri & Late Shri Chotu Lal Ji Tawri
