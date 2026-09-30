@@ -15,7 +15,7 @@ export default function PhotoGallery() {
   const [flipped, setFlipped] = useState(0);
 
   const next = () => setFlipped((f) => Math.min(f + 1, images.length - 1));
-  const prev = () => setFlipped((f) => Math.max(f - 1, 0));
+
 
   return (
     <section className="w-full overflow-x-clip">
@@ -56,7 +56,7 @@ export default function PhotoGallery() {
                   backfaceVisibility: "hidden",
                   transform: isFlipped ? "rotateY(-180deg)" : "rotateY(0deg)",
                   transition:
-                    "transform 1s cubic-bezier(0.645, 0.045, 0.355, 1)",
+                    "transform 1s cubic-bezier(0.645, 0.045, 0.355, 1), z-index 0s linear 1s",
                   zIndex: isFlipped ? index : images.length - index,
                   pointerEvents: isFlipped ? "none" : "auto",
                 }}
