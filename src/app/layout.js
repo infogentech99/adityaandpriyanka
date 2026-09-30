@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 
 
 export const metadata= {
-  metadataBase: new URL("https://adityaandpriyanka.invitearc.com/"),
+  metadataBase: new URL("https://adityaandpriyanka.vercel.app/"),
 
   openGraph: {
     title: "Aditya & Priyanka",
     description: "Join as they begin their forever. 4 & 5 December, 2026",
-    url: "https://adityaandpriyanka.invitearc.com/",
+    url: "https://adityaandpriyanka.vercel.app/",
     siteName: "InviteArc",
     images: [
       {
@@ -41,7 +41,7 @@ export const metadata= {
   },
 
  other: {
-    "og:image:secure_url": "https://adityaandpriyanka.invitearc.com/og.jpg",
+    "og:image:secure_url": "https://adityaandpriyanka.vercel.app/og.jpg",
     "og:image:type": "image/jpg",
   },
 };
