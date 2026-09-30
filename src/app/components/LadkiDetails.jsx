@@ -9,7 +9,7 @@ import Venues from "../components/Venues";
 
 export default function LadkiDetails (){
     return (
-        <div className="mx-auto w-full max-w-4xl p-6 text-center md:p-2">
+        <div className="mx-auto w-full max-w-4xl text-center md:p-2">
 
       <p className="text-[17px] md:text-2xl text-[#B35800] font-cormorant-garamond">
         With the blessing of Smt. Pushpa Devi Dwarkani & Late Kishan Lal Ji Dwarkani
