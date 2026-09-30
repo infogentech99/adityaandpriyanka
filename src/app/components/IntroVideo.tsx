@@ -59,7 +59,7 @@ export default function IntroVideo() {
         <img
           src="/assets/envelope-velvet.webp"
           alt="Envelope"
-          className="w-[250px] md:w-[500px] animate-envelope"
+          className="w-[220px] md:w-[500px] animate-envelope"
         />
       </div>
 
