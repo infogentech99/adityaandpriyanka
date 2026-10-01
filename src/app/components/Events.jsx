@@ -5,7 +5,7 @@ export default function Events() {
   return (
     <div id="itinerary" className="flex scroll-mt-6 flex-col justify-center mt-20 lg:mt-40 items-center">
         <p className="md:text-2xl text-[16px] text-[#B35800] font-cormorant-garamond">
-       Three days of celebration
+       Two days of celebration
 
 
       </p>
@@ -26,7 +26,7 @@ export default function Events() {
              Haldi ki rasam
             </h2>
   <p className="text-[#F6EFE2]  font-cormorant-garamond text-[16px] md:text-base mt-2">
-          Friday, December 4th 2026
+          8:00 am onwards
             </p>
 
 
@@ -135,7 +135,7 @@ export default function Events() {
              Fun Carnival
             </h2>
   <p className="text-[#F6EFE2]  font-cormorant-garamond text-[16px] md:text-base mt-2">
-        10:00 pm onwards
+        10:00 am onwards
             </p>
 
 

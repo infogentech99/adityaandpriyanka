@@ -2,8 +2,8 @@
 
 const venues = [
   {
-    title: "Venue for Haldi, Phoolon ki Barsat, Bhaat Rasam, Sangeet, Fun Carnival, Shubh vivah",
-    place: "Banquet Marudhar Palace",
+    title: "Hotel Marudhar Palace",
+    // place: "Hotel Marudhar Palace",
     image: "/assets/marudhar.webp",
     link: "https://maps.app.goo.gl/TxqSAhseHFbnyNe99",
   },
@@ -19,7 +19,7 @@ export default function Venues() {
         className="text-[#B35800] font-cormorant-garamond text-center
             md:text-5xl text-[30px] lg:text-[80px] leading-tight mt-2 font-semibold"
       >
-        The Venues
+        The Venue
       </h2>
 
       {/* Pin icon */}
@@ -47,7 +47,7 @@ export default function Venues() {
               {v.title}
             </h3>
 
-            <p className="mt-6 text-sm text-[#a0575a] font-serif">{v.place}</p>
+          
 
             <a
               href={v.link}

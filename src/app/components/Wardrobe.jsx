@@ -78,7 +78,7 @@ export default function Wardrobe() {
                 src={cover}
                 alt="Wardrobe Guide"
                 className="w-full h-full object-contain
-                transition-transform duration-500 group-hover:scale-[1.02]"
+                transition-transform duration-500 group-hover:scale-[1.02] "
               />
               <div
                 className="absolute inset-0 flex items-center justify-center
@@ -91,7 +91,7 @@ export default function Wardrobe() {
             <div
               role="region"
               aria-label="Wardrobe image slider"
-              className="relative w-[calc(100vw-2rem)] h-[420px] md:w-[380px] md:h-[520px] lg:w-[900px] overflow-hidden rounded-2xl touch-pan-y cursor-grab active:cursor-grabbing"
+              className="relative w-[calc(100vw-2rem)] h-[550px] md:w-[380px] md:h-[520px] lg:w-[900px] overflow-hidden rounded-2xl touch-pan-y cursor-grab active:cursor-grabbing"
               onPointerDown={handlePointerDown}
               onPointerUp={handlePointerUp}
               onPointerCancel={() => {

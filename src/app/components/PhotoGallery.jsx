@@ -11,20 +11,22 @@ const images = [
   "/assets/couple5.jpg",
 ];
 
+const N = images.length;
+const FLIP_MS = 1000;
+
 export default function PhotoGallery() {
   const [flipped, setFlipped] = useState(0);
-  const [bookCycle, setBookCycle] = useState(0);
+  const [dir, setDir] = useState(1);
+  const [last, setLast] = useState(1);
 
-  const next = () => {
-    if (flipped === images.length - 1) {
-      setBookCycle((cycle) => cycle + 1);
-      setFlipped(0);
-      return;
-    }
+  const handleClick = () => {
+    const nextFlipped = flipped + dir;
+    setLast(dir);
+    setFlipped(nextFlipped);
 
-    setFlipped((current) => current + 1);
+    if (nextFlipped === N - 1) setDir(-1);
+    if (nextFlipped === 0) setDir(1);
   };
-
 
   return (
     <section id="photos" className="w-full scroll-mt-6 overflow-x-clip">
@@ -44,62 +46,53 @@ export default function PhotoGallery() {
       {/* Book */}
       <div className="flex flex-col items-center mt-16 pb-32">
         <div
-          key={bookCycle}
-          className="relative w-[300px] h-[420px] md:w-[380px] md:h-[520px]"
+          onClick={handleClick}
+          className="relative w-[300px] h-[420px] md:w-[380px] md:h-[520px] cursor-pointer"
           style={{ perspective: "1800px" }}
         >
           {images.map((src, index) => {
             const isFlipped = index < flipped;
-            const isTop = index === flipped;
+
+            // Forward: z-index flip ke end me badle. Reverse: turant top pe aaye.
+            const zDelay = last === 1 ? FLIP_MS : 0;
+
             return (
               <div
                 key={src}
-                onClick={() => isTop && next()}
-                className={`group absolute inset-0 ${
-                  isTop ? "cursor-pointer" : ""
-                }`}
+                className="absolute inset-0 pointer-events-none"
                 style={{
                   transformOrigin: "left center",
                   transformStyle: "preserve-3d",
-                  backfaceVisibility: "hidden",
                   transform: isFlipped ? "rotateY(-180deg)" : "rotateY(0deg)",
-                  transition:
-                    "transform 1s cubic-bezier(0.645, 0.045, 0.355, 1), z-index 0s linear 1s",
-                  zIndex: isFlipped ? index : images.length - index,
-                  pointerEvents: isFlipped ? "none" : "auto",
+                  transition: `transform ${FLIP_MS}ms cubic-bezier(0.645, 0.045, 0.355, 1), z-index 0s linear ${zDelay}ms`,
+                  zIndex: isFlipped ? index : 2 * N - index,
                 }}
               >
                 <img
                   src={src}
                   alt={`Gallery ${index + 1}`}
                   draggable={false}
-                  className="w-full h-full object-contain rounded-r-2xl rounded-l-sm hover:shadow-2xl"
+                  className="w-full h-full object-contain rounded-r-2xl rounded-l-sm"
                   style={{ backfaceVisibility: "hidden" }}
                 />
 
                 {/* Spine shadow */}
                 <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-black/30 to-transparent rounded-l-sm pointer-events-none" />
-
-                {/* Cover hint */}
-                {index === 0 && flipped === 0 && (
-                  <div
-                    className="absolute inset-0 flex items-center justify-center
-                    bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"
-                  >
-                    <span
-                      className="bg-white/90 px-5 py-2 rounded-full
-                      text-[#B35800] font-cormorant-garamond text-xl"
-                    >
-                      Click to open
-                    </span>
-                  </div>
-                )}
               </div>
             );
           })}
+
+          {/* Cover hint */}
+          {flipped === 0 && (
+            <div className="absolute inset-0 z-[100] flex items-center justify-center rounded-2xl bg-black/10 opacity-0 hover:opacity-100 transition-opacity">
+              <span className="bg-white/90 px-5 py-2 rounded-full text-[#B35800] font-cormorant-garamond text-xl">
+                Click to open
+              </span>
+            </div>
+          )}
         </div>
 
-        {/* Controls */}
+       
       </div>
     </section>
   );

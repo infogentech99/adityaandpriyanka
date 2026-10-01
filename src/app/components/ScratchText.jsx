@@ -310,7 +310,7 @@ export default function ScratchText() {
     >
       {/* Hidden Text */}
       <div
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex items-center justify-center border bg-white rounded-[12px]"
         style={{
           color: "#B35800",
           fontFamily: "EB Garamond, serif",

@@ -36,12 +36,12 @@ export default function LadkiWeather() {
           evenings.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mt-8">
           {days.map((d) => (
             <div
               key={d.date}
               className="flex flex-col items-center rounded-2xl border border-[#e6d3ae]
-              bg-[#faf5ea] px-4 py-6 shadow-[0_12px_24px_rgba(0,0,0,0.08)]"
+              bg-[#faf5ea] py-3 shadow-[0_12px_24px_rgba(0,0,0,0.08)]"
             >
               <span className="text-3xl">{d.icon}</span>
 
@@ -49,11 +49,11 @@ export default function LadkiWeather() {
                 {d.date}
               </span>
 
-              <span className="mt-2 text-4xl text-[#B35800] font-cormorant-garamond">
+              <span className="mt-2 text-3xl text-[#B35800] font-cormorant-garamond">
                 {d.high}°
               </span>
 
-              <span className="mt-4 text-xl text-[#a0575a] font-cormorant-garamond">
+              <span className="mt-2 text-xl text-[#a0575a] font-cormorant-garamond">
                 {d.low}°
               </span>
 
