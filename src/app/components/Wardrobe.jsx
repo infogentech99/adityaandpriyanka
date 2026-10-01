@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const cover = "/assets/door.png";
 
@@ -16,29 +16,29 @@ const images = [
 export default function Wardrobe() {
   const [isOpen, setIsOpen] = useState(false);
   const [active, setActive] = useState(0);
-  const trackRef = useRef(null);
+  const touchStartX = useRef(null);
 
-  useEffect(() => {
-    if (!isOpen) return;
+  const handlePointerDown = (event) => {
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    touchStartX.current = event.clientX;
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
 
-    const onScroll = () => {
-      const el = trackRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const total = rect.height - window.innerHeight;
-      if (total <= 0) return;
-      const progress = Math.min(Math.max(-rect.top / total, 0), 1);
-      setActive(Math.round(progress * (images.length - 1)));
-    };
+  const handlePointerUp = (event) => {
+    if (touchStartX.current === null) return;
 
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isOpen]);
+    const distance = event.clientX - touchStartX.current;
+    if (Math.abs(distance) > 40) {
+      setActive((current) =>
+        Math.max(0, Math.min(images.length - 1, current + (distance < 0 ? 1 : -1))),
+      );
+    }
+    touchStartX.current = null;
+  };
 
   return (
     // overflow-x-clip (NOT overflow-hidden) so sticky works
-    <section className="w-full overflow-x-clip">
+    <section id="wardrobe" className="w-full scroll-mt-6 overflow-x-clip">
       {/* Heading */}
       <div className="flex flex-col justify-center mt-20 lg:mt-40 items-center">
         <h2
@@ -52,13 +52,7 @@ export default function Wardrobe() {
         </p>
       </div>
 
-      {/* Scroll track */}
-      <div
-        ref={trackRef}
-        className="mt-16 pb-32"
-        style={isOpen ? { height: `${images.length * 80}vh` } : undefined}
-      >
-        <div className="sticky top-24 flex justify-center">
+      <div className="mt-16 pb-32 flex justify-center">
           {!isOpen ? (
             <button
               onClick={() => setIsOpen(true)}
@@ -78,7 +72,14 @@ export default function Wardrobe() {
               </div>
             </button>
           ) : (
-            <div className="relative w-[300px] h-[420px] md:w-[380px] md:h-[520px]">
+            <div
+              className="relative w-[calc(100vw-2rem)] h-[250px] md:w-[380px] md:h-[520px] overflow-hidden rounded-2xl touch-pan-y cursor-grab active:cursor-grabbing"
+              onPointerDown={handlePointerDown}
+              onPointerUp={handlePointerUp}
+              onPointerCancel={() => {
+                touchStartX.current = null;
+              }}
+            >
               {images.map((src, index) => {
                 const offset = index - active;
                 const passed = offset < 0;
@@ -86,26 +87,23 @@ export default function Wardrobe() {
                 return (
                   <div
                     key={src}
-                    className="absolute inset-0 transition-all duration-700 ease-out"
+                    className="absolute inset-y-0 left-0 w-1/2 md:w-full transition-all duration-700 ease-out"
                     style={{
-                      transform: passed
-                        ? "translateY(-110%) rotate(-6deg)"
-                        : `translateY(${offset * 35}px) scale(${1 - offset * 0.04}) rotate(${offset * 2}deg)`,
-                      opacity: passed ? 0 : offset > 2 ? 0 : 1,
+                      transform: `translateX(${offset * 100}%)`,
+                      opacity: passed ? 0 : offset > 1 ? 0 : 1,
                       zIndex: images.length - index,
                     }}
                   >
                     <img
                       src={src}
                       alt={`Wardrobe ${index + 1}`}
-                      className="w-full h-full object-cover rounded-2xl shadow-xl"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 );
               })}
             </div>
           )}
-        </div>
       </div>
     </section>
   );

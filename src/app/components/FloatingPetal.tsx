@@ -34,7 +34,7 @@ export default function FloatingPetal({
 
   return (
     <img
-      src="/flower_petals.png"
+      src="/flower_petals2.webp"
       alt="petal"
       className={`floating-petal ${className}`}
       style={{

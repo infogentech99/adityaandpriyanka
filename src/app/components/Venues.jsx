@@ -2,24 +2,18 @@
 
 const venues = [
   {
-    title: "Venue for Haldi, Phoolon ki Barsat, Bhaat Rasam",
+    title: "Venue for Haldi, Phoolon ki Barsat, Bhaat Rasam, Sangeet, Fun Carnival, Shubh vivah",
     place: "Banquet Marudhar Palace",
     image: "/assets/marudhar.webp",
     link: "https://maps.app.goo.gl/TxqSAhseHFbnyNe99",
   },
 
-  {
-    title: "Venue for Sangeet, Fun Carnival, Shubh vivah",
-    place: "Nemi Nath Garden",
-    image: "/assets/marudhar.webp",
-    link: "https://maps.app.goo.gl/TxqSAhseHFbnyNe99",
-  },
 
 ];
 
 export default function Venues() {
   return (
-    <section className="w-full px-4 md:px-10 py-20 flex flex-col items-center">
+    <section id="venue" className="w-full scroll-mt-6 px-4 md:px-10 py-20 flex flex-col items-center">
       {/* Heading */}
       <h2
         className="text-[#B35800] font-cormorant-garamond text-center
@@ -38,7 +32,7 @@ export default function Venues() {
       </svg>
 
       {/* Cards */}
-      <div className="mt-14 w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div className="mt-14 w-full max-w-4xl grid grid-cols-1 md:grid-cols-1 gap-6 md:gap-8">
         {venues.map((v) => (
           <div key={v.title} className="flex flex-col items-center text-center">
             <div className="w-full aspect-[4/3] overflow-hidden rounded-xl shadow-[0_20px_40px_rgba(0,0,0,0.18)]">

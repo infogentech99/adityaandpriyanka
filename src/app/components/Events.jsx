@@ -3,7 +3,7 @@
 export default function Events() {
 
   return (
-    <div className="flex flex-col justify-center mt-20 lg:mt-40 items-center">
+    <div id="itinerary" className="flex scroll-mt-6 flex-col justify-center mt-20 lg:mt-40 items-center">
         <p className="md:text-2xl text-[16px] text-[#B35800] font-cormorant-garamond">
        Three days of celebration
 

@@ -6,15 +6,14 @@ const days = [
 ];
 
 const requestNames = [
-  "Raj kumar - Mona",
-  "Shiv kumar - Rashmi",
-  "Rohan - Neha",
-  "and Tawri Family",
+  "Dev dwarkani",
+  "Taruna dwarkani",
+  
 ];
 
-const regardsNames = ["Ankit - palak", "Rakshit - priya"];
+const regardsNames = ["Sangeeta- Giraj Ratan ji Bagree,", "Urvashi- Siddharth ji"];
 
-export default function Weather() {
+export default function LadkiWeather() {
   return (
     <section
       id="weather"
@@ -107,11 +106,18 @@ export default function Weather() {
           MATERNAL SIDE
         </p>
         <p className="text-xl md:text-2xl text-[#f6e6dc] font-serif mt-3">
-          Shri Narendra kumar Jhawar & Shri pawan kumar Jhawar
+          Madan Gopal ji, Chagan lal ji, Lal Chand ji Daga and Daga family
+        </p>
+
+
+          <div className="mx-auto my-6 h-px w-24 bg-[#d4a63c]/50" />
+        <p className="text-[11px] tracking-[0.3em] uppercase text-[#d4a63c]">
+          Paternal side
         </p>
         <p className="text-xl md:text-2xl text-[#f6e6dc] font-serif mt-3">
-          Vaani tawri-mere chachu ke shadi mae jrur jrur aana….
+          Shankar lal ji, Dau lal ji, Bansi lal ji, Shushil kumar ji, Vimal kumar, Chandan Dwarkani and Dwarkani family
         </p>
+        
       </div>
     </section>
   );

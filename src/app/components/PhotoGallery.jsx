@@ -13,12 +13,21 @@ const images = [
 
 export default function PhotoGallery() {
   const [flipped, setFlipped] = useState(0);
+  const [bookCycle, setBookCycle] = useState(0);
 
-  const next = () => setFlipped((f) => Math.min(f + 1, images.length - 1));
+  const next = () => {
+    if (flipped === images.length - 1) {
+      setBookCycle((cycle) => cycle + 1);
+      setFlipped(0);
+      return;
+    }
+
+    setFlipped((current) => current + 1);
+  };
 
 
   return (
-    <section className="w-full overflow-x-clip">
+    <section id="photos" className="w-full scroll-mt-6 overflow-x-clip">
       {/* Heading */}
       <div className="flex flex-col justify-center mt-0 lg:mt-20 items-center">
         <p className="md:text-2xl text-[16px] text-[#B35800] font-cormorant-garamond">
@@ -35,20 +44,19 @@ export default function PhotoGallery() {
       {/* Book */}
       <div className="flex flex-col items-center mt-16 pb-32">
         <div
+          key={bookCycle}
           className="relative w-[300px] h-[420px] md:w-[380px] md:h-[520px]"
           style={{ perspective: "1800px" }}
         >
           {images.map((src, index) => {
             const isFlipped = index < flipped;
             const isTop = index === flipped;
-            const isLast = index === images.length - 1;
-
             return (
               <div
                 key={src}
-                onClick={() => isTop && !isLast && next()}
+                onClick={() => isTop && next()}
                 className={`group absolute inset-0 ${
-                  isTop && !isLast ? "cursor-pointer" : ""
+                  isTop ? "cursor-pointer" : ""
                 }`}
                 style={{
                   transformOrigin: "left center",
