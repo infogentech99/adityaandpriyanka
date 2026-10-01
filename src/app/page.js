@@ -56,7 +56,7 @@ export default function Home() {
           e.stopPropagation();
           started ? toggleMusic() : startMusic();
         }}
-        className="fixed bottom-4 right-4 z-50 bg-[#FF35A1] text-white p-3 rounded-xl text-xl"
+        className="fixed top-4 right-4 z-50 bg-[#B35800] text-white px-3 py-2 rounded-xl text-xl"
       >
         {playing ? "⏸" : "▶"}
       </button>
