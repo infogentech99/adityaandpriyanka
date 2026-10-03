@@ -6,13 +6,13 @@ const days = [
 ];
 
 const requestNames = [
-  "Raj kumar - Mona",
-  "Shiv kumar - Rashmi",
-  "Rohan - Neha",
+  "Mona - Raj kumar ji",
+  "Rashmi - Shiv kumar ji",
+  "Neha - Rohan",
   "and Tawri Family",
 ];
 
-const regardsNames = ["Ankit - palak", "Rakshit - priya"];
+const regardsNames = ["Palak - Ankit ji", "Priya - Rakshit ji"];
 
 export default function Weather() {
   return (
