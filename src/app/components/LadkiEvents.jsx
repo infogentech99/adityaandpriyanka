@@ -16,7 +16,7 @@ export default function LadkiEvents() {
         Wedding Events
       </h2>
 
-      <h2 className="text-[#B35800] font-cormorant-garamond text-[22px] md:text-xl lg:text-[30px] mt-5">
+      <h2 className="text-white bg-[#B35800]  font-cormorant-garamond text-[22px] md:text-xl lg:text-[30px] mt-5 border px-8 py-2 rounded-xl">
         Friday, 4th December 2026
       </h2>
       <div className="flex flex-col bg-[#E6B325] rounded-2xl lg:py-12 lg:px-20 px-6 py-6 md:mt-20 mt-6">
@@ -133,7 +133,7 @@ export default function LadkiEvents() {
         </div>
       </div>
 
-      <h2 className="text-[#B35800] font-cormorant-garamond text-[22px] md:text-xl lg:text-[30px]">
+      <h2 className="text-[#B35800] font-cormorant-garamond text-[22px] md:text-xl lg:text-[30px] border px-8 py-2 rounded-xl text-white bg-[#B35800]">
         Saturday, 5th December 2026
       </h2>
 

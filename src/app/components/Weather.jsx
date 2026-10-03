@@ -107,7 +107,7 @@ export default function Weather() {
           MATERNAL SIDE
         </p>
         <p className="text-xl md:text-2xl text-[#f6e6dc] font-serif mt-3">
-          Shri Narendra kumar Jhawar & Shri pawan kumar Jhawar
+          Shri Narendra kumar & Shri Pawan kumar Jhawar
         </p>
         <p className="text-xl md:text-2xl text-[#f6e6dc] font-serif mt-3">
           Vaani tawri-mere chachu ke shadi mae jrur jrur aana….
