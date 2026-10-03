@@ -44,7 +44,7 @@ export default function HeroSection() {
           />
 
           <p className="mt-3 text-[15px] tracking-[0.15em] text-[#B35800] sm:text-xs md:mt-5 md:text-2xl font-cormorant-garamond">
-            #fallinginlove
+            #AdityaGotHisPriyanka
           </p>
         </div>
 

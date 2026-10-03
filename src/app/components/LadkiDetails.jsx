@@ -15,7 +15,7 @@ export default function LadkiDetails (){
         With the blessing of Smt. Pushpa Devi Dwarkani & Late Kishan Lal Ji Dwarkani
       </p> <br/>
  <p className="text-[17px] md:text-2xl text-[#B35800] font-cormorant-garamond">
-        We cordially invite you to the wedding ceremony of their Grandson
+        We cordially invite you to the wedding ceremony of their Granddaughter
       </p>
 
          <div className="mt-8 text-center">
@@ -28,7 +28,7 @@ export default function LadkiDetails (){
             </h2>
 
             <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
-              (D/o Smt. Rakhi Dwarkani & Shri Kamal Dwarkani)
+              (D/o Smt. Rakhi Dwarkani & Shri Kamal Ji Dwarkani)
             </p>
 
             <h2

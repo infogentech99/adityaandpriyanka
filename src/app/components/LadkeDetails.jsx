@@ -47,7 +47,7 @@ export default function LadkeDetails (){
             </h2>
 
             <p className="text-[#B35800] font-cormorant-garamond lg:text-[30px] md:text-2xl mt-2 text-[16px]">
-              (D/o Smt. Rakhi Dwarkani & Shri Kamal Dwarkani )
+              (D/o Smt. Rakhi Dwarkani & Shri Kamal Ji Dwarkani )
             </p>
 
             <ScratchText/>

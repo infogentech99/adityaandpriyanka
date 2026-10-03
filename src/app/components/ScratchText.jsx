@@ -320,7 +320,7 @@ export default function ScratchText() {
           textShadow: "0 1px 6px rgba(255,215,0,.35)",
         }}
       >
-        5th December
+        4<sup className="text-[16px]">th</sup>-5<sup className="text-[16px]">th</sup> December
       </div>
 
       <canvas

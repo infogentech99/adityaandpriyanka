@@ -32,7 +32,7 @@ export default function Events() {
 
             <p className="text-[#F6EFE2]  font-cormorant-garamond text-sm md:text-base mt-2">
               <span className="text-[15px] md:text-base lg:text-xl  font-cormorant-garamond font-semibold">
-               Hotel Marudhar Palace  
+               Banquet Marudhar Palace  
               </span>
               <br />
               Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
@@ -84,7 +84,7 @@ export default function Events() {
 
             <p className="text-[#F6EFE2]  font-cormorant-garamond text-sm md:text-base mt-2">
               <span className="text-[15px] md:text-base lg:text-xl  font-cormorant-garamond font-semibold">
-               Hotel Marudhar Palace  
+               Banquet Marudhar Palace  
               </span>
               <br />
               Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
@@ -156,7 +156,32 @@ export default function Events() {
             </a>
           </div>
 
+ <div className="flex flex-col bg-[#E85D4A] rounded-2xl lg:py-12 lg:px-20 px-6 py-6 md:mt-20 mt-8">
+            <h2 className="text-[#F6EFE2] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px]">
+             Baarat prasthan
+            </h2>
+  <p className="text-[#F6EFE2]  font-cormorant-garamond text-[16px] md:text-base mt-2">
+        5:30 pm onwards
+            </p>
 
+
+            <p className="text-[#F6EFE2]  font-cormorant-garamond text-sm md:text-base mt-2">
+              <span className="text-[15px] md:text-base lg:text-xl  font-cormorant-garamond font-semibold">
+               Kothari palace
+              </span>
+              <br />
+             284C+WC7, Rani Bazar, Bikaner, Rajasthan 334001
+            </p>
+
+            <a
+              href="https://maps.app.goo.gl/5wPTZm5q4h3snyu78"
+              className="text-[#F6EFE2] underline md:text-sm text-[13px] mt-2  font-cormorant-garamond"
+              target="_blank"
+            >
+             View Location
+            </a>
+          </div> 
+          
           <div className="flex flex-col bg-[#8B6FAE] rounded-2xl lg:py-12 lg:px-20 px-6 py-6 md:mt-20 mt-8">
             <h2 className="text-[#F6EFE2] font-cormorant-garamond text-[28px] md:text-2xl lg:text-[50px]">
           Shubh vivah

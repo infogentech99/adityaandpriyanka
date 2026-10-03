@@ -11,7 +11,7 @@ const requestNames = [
   
 ];
 
-const regardsNames = ["Sangeeta- Giraj Ratan ji Bagree,", "Urvashi- Siddharth ji"];
+const regardsNames = ["Sangeeta- Giriraj Ratan ji Bagree,", "Urvashi- Siddharth ji"];
 
 export default function LadkiWeather() {
   return (
