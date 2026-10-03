@@ -125,8 +125,23 @@ export default function Events() {
              View Location
             </a>
           </div>
+<div className="flex items-center w-full mt-16 mb-13">
+  <div className="flex-1">
+    <div className="border-t-2 border-[#B35800]" />
+    <div className="border-t border-[#B35800] mt-1" />
+  </div>
 
-          <h2 className="text-[#B35800] font-cormorant-garamond text-[22px] md:text-xl lg:text-[30px] mt-12">
+  <span className="mx-4 text-[#B35800] text-lg">✦</span>
+
+  <div className="flex-1">
+    <div className="border-t-2 border-[#B35800]" />
+    <div className="border-t border-[#B35800] mt-1" />
+  </div>
+</div>
+
+
+
+          <h2 className="text-[#B35800] font-cormorant-garamond text-[22px] md:text-xl lg:text-[30px] ">
             Saturday, 5th December 2026
             </h2>   
 
