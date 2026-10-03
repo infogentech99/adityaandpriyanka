@@ -3,8 +3,13 @@
 import { useEffect, useRef } from "react";
 import confetti from "canvas-confetti";
 
-export default function ScratchText() {
+export default function ScratchText({ onReveal }) {
   const canvasRef = useRef(null);
+  const onRevealRef = useRef(onReveal);
+
+  useEffect(() => {
+    onRevealRef.current = onReveal;
+  }, [onReveal]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -13,7 +18,7 @@ export default function ScratchText() {
     const ctx = canvas.getContext("2d");
 
     const width = 320;
-    const height = 50;
+    const height = 70; // container height se match
 
     canvas.width = width;
     canvas.height = height;
@@ -23,6 +28,8 @@ export default function ScratchText() {
     // ==========================
 
     const drawLayer = () => {
+      ctx.globalCompositeOperation = "source-over";
+
       const gradient = ctx.createLinearGradient(0, 0, width, height);
 
       gradient.addColorStop(0, "#FFF6BF");
@@ -41,7 +48,6 @@ export default function ScratchText() {
       for (let i = 0; i < 5000; i++) {
         ctx.fillStyle =
           Math.random() > 0.5 ? "rgba(255,255,255,.9)" : "rgba(120,80,0,.8)";
-
         ctx.fillRect(Math.random() * width, Math.random() * height, 1, 1);
       }
 
@@ -66,12 +72,9 @@ export default function ScratchText() {
 
       // Text
       ctx.fillStyle = "#ffffff";
-
-      ctx.font = "bold 16px Georgia";
-
+      ctx.font = "bold 20px Georgia";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-
       ctx.fillText("✨ Scratch to Reveal ✨", width / 2, height / 2);
 
       ctx.globalCompositeOperation = "destination-out";
@@ -123,9 +126,7 @@ export default function ScratchText() {
         const ry = y + (Math.random() - 0.5) * 28;
 
         ctx.beginPath();
-
         ctx.arc(rx, ry, Math.random() * 4 + 1, 0, Math.PI * 2);
-
         ctx.fill();
       }
 
@@ -134,17 +135,14 @@ export default function ScratchText() {
         ctx.lineWidth = Math.random() * 2 + 1;
 
         ctx.beginPath();
-
         ctx.moveTo(
           x + (Math.random() - 0.5) * 20,
           y + (Math.random() - 0.5) * 20,
         );
-
         ctx.lineTo(
           x + (Math.random() - 0.5) * 35,
           y + (Math.random() - 0.5) * 35,
         );
-
         ctx.stroke();
       }
 
@@ -163,7 +161,9 @@ export default function ScratchText() {
 
       completed = true;
 
-      // ✨ Gold Sparkles
+      console.log("REVEALED");
+      onRevealRef.current?.(); // countdown show trigger
+
       confetti({
         particleCount: 300,
         spread: 100,
@@ -171,25 +171,21 @@ export default function ScratchText() {
         gravity: 0.8,
         scalar: 1,
         ticks: 250,
-        origin: {
-          x: 0.5,
-          y: 0.5,
-        },
+        origin: { x: 0.5, y: 0.5 },
         colors: [
-          "#FF4D6D", // Pink
-          "#FF6B6B", // Coral Red
-          "#FFD93D", // Yellow
-          "#6BCB77", // Green
-          "#4D96FF", // Blue
-          "#845EC2", // Purple
-          "#FF9671", // Orange
-          "#00C9A7", // Teal
-          "#FFFFFF", // White
-          "#FFD700", // Gold
+          "#FF4D6D",
+          "#FF6B6B",
+          "#FFD93D",
+          "#6BCB77",
+          "#4D96FF",
+          "#845EC2",
+          "#FF9671",
+          "#00C9A7",
+          "#FFFFFF",
+          "#FFD700",
         ],
       });
 
-      // Extra sparkle burst
       setTimeout(() => {
         confetti({
           particleCount: 100,
@@ -197,10 +193,7 @@ export default function ScratchText() {
           startVelocity: 18,
           gravity: 0.8,
           scalar: 0.6,
-          origin: {
-            x: 0.5,
-            y: 0.5,
-          },
+          origin: { x: 0.5, y: 0.5 },
           colors: ["#FFD700", "#FFF4B9", "#FFFFFF"],
         });
       }, 150);
@@ -236,17 +229,13 @@ export default function ScratchText() {
 
     const getPos = (e) => {
       const rect = canvas.getBoundingClientRect();
-
-      if (e.touches && e.touches.length) {
-        return {
-          x: e.touches[0].clientX - rect.left,
-          y: e.touches[0].clientY - rect.top,
-        };
-      }
+      const scaleX = width / rect.width;
+      const scaleY = height / rect.height;
+      const point = e.touches && e.touches.length ? e.touches[0] : e;
 
       return {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
+        x: (point.clientX - rect.left) * scaleX,
+        y: (point.clientY - rect.top) * scaleY,
       };
     };
 
@@ -302,7 +291,7 @@ export default function ScratchText() {
 
   return (
     <div
-      className="relative inline-block overflow-hidden rounded-md select-none  mt-12"
+      className="relative inline-block overflow-hidden rounded-md select-none mt-12"
       style={{
         width: "320px",
         height: "70px",
