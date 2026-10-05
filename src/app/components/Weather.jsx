@@ -6,8 +6,8 @@ const days = [
 ];
 
 const requestNames = [
-  "Mona - Raj kumar ji",
-  "Rashmi - Shiv kumar ji",
+  "Mona - Raj Kumar Tawri",
+  "Rashmi - Shiv Kumar Tawri",
   "Neha - Rohan",
   "and Tawri Family",
 ];
@@ -107,7 +107,7 @@ export default function Weather() {
           MATERNAL SIDE
         </p>
         <p className="text-xl md:text-2xl text-[#f6e6dc] font-serif mt-3">
-          Shri Narendra kumar & Shri Pawan kumar Jhawar
+          Shri Narendra Kumar & Shri Pawan Kumar Jhawar
         </p>
         <p className="text-xl md:text-2xl text-[#f6e6dc] font-serif mt-3">
           Vaani tawri-mere chachu ke shadi mae jrur jrur aana….

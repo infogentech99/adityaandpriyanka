@@ -32,7 +32,7 @@ export default function LadkiEvents() {
             Banquet Marudhar Palace
           </span>
           <br />
-          Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
+          Kanta Khaturia Street, near APEX Hospital, Bikaner, Rajasthan 334001
         </p>
 
         <a
@@ -57,7 +57,7 @@ export default function LadkiEvents() {
             Banquet Marudhar Palace
           </span>
           <br />
-          Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
+          Kanta Khaturia Street, near APEX Hospital, Bikaner, Rajasthan 334001
         </p>
 
         <a
@@ -82,7 +82,7 @@ export default function LadkiEvents() {
             Hall, Ground Floor, Marudhar Palace
           </span>
           <br />
-          Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
+          Kanta Khaturia Street, near APEX Hospital, Bikaner, Rajasthan 334001
         </p>
 
         <a
@@ -107,7 +107,7 @@ export default function LadkiEvents() {
             Nemi Nath Garden
           </span>
           <br />
-          Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
+          Kanta Khaturia Street, near APEX Hospital, Bikaner, Rajasthan 334001
         </p>
 
         <a
@@ -150,7 +150,7 @@ export default function LadkiEvents() {
             Nemi Nath Garden
           </span>
           <br />
-          Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
+          Kanta Khaturia Street, near APEX Hospital, Bikaner, Rajasthan 334001
         </p>
 
         <a
@@ -175,7 +175,7 @@ export default function LadkiEvents() {
             Nemi Nath Garden
           </span>
           <br />
-          Kanta Khaturia Steet, near APEX Hospital, Bikaner, Rajasthan 334001
+          Kanta Khaturia Street, near APEX Hospital, Bikaner, Rajasthan 334001
         </p>
 
         <a
